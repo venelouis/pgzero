@@ -45,3 +45,5 @@ def draw():
         screen.draw.text('Score: ' + str(score), (15,10), color=(255,255,255), fontsize=30)
 
 pgzrun.go() # Must be last line
+
+# source: https://aposteriori.trinket.io/game-development-with-pygame-zero#/gem-catcher/game-over
