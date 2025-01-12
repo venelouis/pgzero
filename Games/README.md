@@ -3,7 +3,7 @@
 - Python
 - pip install pgzero
 
-Games created:
+# Games created:
 
 <ul>
 <li><a href="./Games/Gem Catcher">Gem Catcher</a></li>
