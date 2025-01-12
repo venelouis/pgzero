@@ -13,13 +13,14 @@ gem.x = random.randint(20, 780)
 gem.y = 0
 
 score = 0
+lives = 3
 game_over = False
 
 def on_mouse_move(pos, rel, buttons):
     ship.x = pos[0]
 
 def update():
-    global score, game_over
+    global score, game_over, lives
 
     if keyboard.left:
         ship.x = ship.x - 5
@@ -28,7 +29,12 @@ def update():
 
     gem.y = gem.y + 4 + score / 5
     if gem.y > 600:
-        game_over = True
+        lives -= 1
+        if lives == 0:
+            game_over = True
+        else:
+            gem.x = random.randint(20, 780)
+            gem.y = 0
     if gem.colliderect(ship):
         gem.x = random.randint(20, 780)
         gem.y = 0
