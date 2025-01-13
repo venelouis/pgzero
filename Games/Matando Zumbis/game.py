@@ -13,7 +13,7 @@ bullet_pickup_img = 'bullet'
 life_pickup_img = 'life' 
 background = Actor('background', (WIDTH/2, HEIGHT/2))
 music.play('bg')
-music.set_volume(1)
+music.set_volume(5)
 
 player = Actor('p0', (WIDTH/2, HEIGHT/2))
 player.fps = 10
@@ -57,9 +57,9 @@ def draw():
         for life_pickup in life_pickups:
             life_pickups.remove(life_pickup)
         screen.draw.text('Matando Zumbis', centerx=WIDTH/2, centery=150, color="black", fontsize=80)
-        screen.draw.text('Aperte "k" Para Começar o Jogo', centerx=WIDTH/2, centery=270, color="black", fontsize=30)
+        screen.draw.text('Aperte "J" para Jogar', centerx=WIDTH/2, centery=270, color="black", fontsize=30)
         screen.draw.text('Score: ' + str(score), centerx=WIDTH/2, centery=450, color="black", fontsize=60)
-        screen.draw.text("Sound On/Off", centerx=WIDTH/2, centery=300, color="black", fontsize=30)
+        screen.draw.text('Aperte "M" para Ligar/Desligar a Música', centerx=WIDTH/2, centery=300, color="black", fontsize=30)
         screen.draw.text("Clique no 'x' para sair", centerx=WIDTH/2, centery=330, color="black", fontsize=30)
 
     else: 
@@ -293,7 +293,7 @@ def update():
                     love_list.append(love)
             draw_love = False
     else:
-        if keyboard.k:
+        if keyboard.j:
             # Starting Variables
             score = 0
             life = 5
@@ -311,6 +311,14 @@ def update():
             player.x = WIDTH/2
             player.y = HEIGHT/2
 
-
+music_on = True  # Define music_on at the top level
+def on_key_down(key):
+    global music_on
+    if key == keys.M:
+        if music_on:
+            music.stop()
+        else:
+            music.play('bg')
+        music_on = not music_on
 
 pgzrun.go()
