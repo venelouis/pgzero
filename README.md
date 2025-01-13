@@ -11,4 +11,6 @@ Games created:
 <ul>
 <li><a href="./Games/Gem Catcher">Gem Catcher</a></li>
 <li><a href="./Games/Ninja Runner">Ninja Runner</a></li>
+<li><a href="./Games/Tanks">Tanks</a></li>
+<li><a href="./Games/Matando Zumbis">Matando Zumbis</a></li>
 </ul>
